@@ -1,0 +1,243 @@
+/* ============================================
+   sections.css — About, Skills, Education
+   ============================================ */
+
+/* ── ABOUT ── */
+#about {
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-avatar-wrap {
+  position: relative;
+}
+
+.about-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--slate) 0%, var(--navy) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 340px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-avatar span {
+  font-family: 'DM Serif Display', serif;
+  font-size: 5rem;
+  color: rgba(200, 118, 58, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.about-avatar::after {
+  content: 'MF';
+  position: absolute;
+  font-size: 10rem;
+  color: rgba(200, 118, 58, 0.06);
+  bottom: -20px;
+  right: -10px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  background: var(--copper);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--ice-dark);
+}
+
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-num span {
+  color: var(--copper);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── SKILLS ── */
+#skills {
+  background: var(--ice);
+}
+
+.skills-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(15, 27, 45, 0.08);
+}
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--ice);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.skill-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.skill-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ── EDUCATION ── */
+#education {
+  background: var(--ice);
+}
+
+.edu-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--copper), transparent);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding-left: 0.5rem;
+}
+
+.timeline-dot {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  margin-top: 0.25rem;
+}
+
+.edu-period {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--copper);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.edu-institution {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.edu-degree {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.edu-detail {
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.65;
+}

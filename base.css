@@ -1,0 +1,164 @@
+/* ============================================
+   base.css — CSS Variables, Reset, Typography
+   ============================================ */
+
+:root {
+  --navy:         #0F1B2D;
+  --slate:        #1E3A5F;
+  --copper:       #C8763A;
+  --copper-light: #E8924A;
+  --ice:          #F4F8FC;
+  --ice-dark:     #E8EFF7;
+  --muted:        #6B7FA3;
+  --text:         #1A2840;
+  --white:        #FFFFFF;
+  --border:       rgba(15, 27, 45, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--ice);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Shared section utilities */
+section {
+  padding: 100px 5%;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--copper);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 580px;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: var(--copper);
+  border-radius: 2px;
+  margin-bottom: 3rem;
+}
+
+/* Shared button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--copper);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: var(--copper-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Skill tags (shared across sections) */
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  background: var(--ice);
+  color: var(--slate);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.9rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--copper);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.35s, opacity 0.35s;
+  z-index: 999;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,83 @@
+/* ============================================
+   responsive.css — Media Queries
+   ============================================ */
+
+/* ── Tablet (max 900px) ── */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-avatar {
+    max-width: 220px;
+  }
+
+  .project-card.featured {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.featured .project-thumb {
+    min-height: 200px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile (max 640px) ── */
+@media (max-width: 640px) {
+  nav {
+    padding: 0 4%;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav.open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--ice);
+    padding: 1.5rem 4%;
+    border-bottom: 1px solid var(--border);
+    gap: 1.25rem;
+  }
+
+  nav.open .nav-cta {
+    display: block;
+    margin: 0 4% 1.5rem;
+    text-align: center;
+  }
+
+  section {
+    padding: 72px 4%;
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .contact-socials {
+    gap: 0.75rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
